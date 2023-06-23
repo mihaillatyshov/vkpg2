@@ -1,0 +1,9 @@
+worker-threads: 4
+worker-fs-threads: 2
+logger-level: ERROR
+
+is_testing: false
+
+server-port: 5000
+
+dbconnection: "postgresql://docker:docker@localhost:5432/forum"
