@@ -55,6 +55,9 @@ CREATE TABLE IF NOT EXISTS tp.posts (
     parent_id INTEGER NOT NULL DEFAULT 0
 );
 
+CREATE INDEX IF NOT EXISTS post_thread_idx ON tp.posts(thread_id);
+CREATE INDEX IF NOT EXISTS post_path_idx   ON tp.posts((path[1]));
+
 CREATE TABLE IF NOT EXISTS tp.forums_users (
     forum_id INTEGER REFERENCES tp.forums NOT NULL,
     user_id INTEGER REFERENCES tp.users NOT NULL,
